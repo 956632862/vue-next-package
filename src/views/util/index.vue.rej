@@ -1,6 +1,0 @@
-diff a/src/views/util/index.vue b/src/views/util/index.vue	(rejected hunks)
-@@ -7,2 +7,2 @@ export default {
--name: "index"
--}
-+  name: 'index',
-+};
