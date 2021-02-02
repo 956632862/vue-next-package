@@ -70,6 +70,10 @@ export default defineComponent({
     // 分片上传
     async zoneUpload(e: any) {
       const file = e.files[0];
+      const filename = file.name;
+      const unionKey = null;
+      console.log(md5(filename));
+      console.log('生成唯一标示', unionKey);
       // 将文件切片
       const files: any = await this.zoneFile(file);
       // 并发
