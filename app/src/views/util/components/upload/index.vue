@@ -28,10 +28,10 @@ export default defineComponent({
       input.click();
     },
 
-    // eslint-disable-next-line consistent-return
     onChange(event: any) {
       const e = event.target;
       const { files } = e; // 拿到所有的文件
+
       // 校验文件是否符合规格
       const validate = this.validate(files);
       if (validate) return alert(validate);
@@ -47,6 +47,8 @@ export default defineComponent({
         const data = { [this.upKey]: item };
         this.upload(data);
       });
+
+      return true;
     },
 
     /**
@@ -62,10 +64,11 @@ export default defineComponent({
           formData.append(fileKey, file[fileKey]);
         }
       }
-      // 不搞
-      request.post('/api').then((result) => {
-        console.log(result);
-      });
+
+      // 发送到后端
+      // request.post('/api').then((result) => {
+      //   console.log(result);
+      // });
     },
 
     // 不符合就返回直接返回错误新消息，不然就是false
