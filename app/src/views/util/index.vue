@@ -1,6 +1,6 @@
 <template>
 <div class="handle" >
-    <upload zone/>
+    <upload zone :multiple="3"/>
 </div>
 </template>
 

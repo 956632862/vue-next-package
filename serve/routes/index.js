@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 /**
  * 切片上传
  */
-router.get('/zone', function(req, res, next) {
+router.post('/zone', function(req, res, next) {
   res.json({
     message:res.body
   })
