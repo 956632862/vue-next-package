@@ -77,7 +77,7 @@ export default defineComponent({
       const size = this.size * 1024;
 
       // 多选时判断文件是否超出
-      if (this.multiple > 1 && files.length > this.multiple) {
+      if (files.length > this.multiple) {
         result = `只能选择${this.multiple}个文件`;
         return result;
       }
@@ -118,7 +118,7 @@ export default defineComponent({
     zoneFile(file: any) {
       const files: any = [];
       const filename = Base64.encode(file.name);
-      const zoneSize: number = 1024 * 1024; // 每个切片1mb
+      const zoneSize: number = this.chunkSize * 1024 * 1024; // 每个切片大小
       const { size } = file;
       let totalPieces: number = Math.ceil(size / zoneSize); // 根据文件大小切片总数
       let index = 0; // 开始下标

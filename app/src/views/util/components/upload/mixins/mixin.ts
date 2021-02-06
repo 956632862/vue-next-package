@@ -15,6 +15,11 @@ const upload = {
       type: Number,
       default: 1,
     },
+    // 切片大小 单位mb
+    chunkSize: {
+      type: Number,
+      default: 1,
+    },
     // 是否切片上传
     zone: {
       type: Boolean,
