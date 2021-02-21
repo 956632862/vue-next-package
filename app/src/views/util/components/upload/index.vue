@@ -11,7 +11,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { Base64 } from 'js-base64';
-import request from '@/utils/request';
+// import request from '@/utils/request';
 import mixin from './mixins/mixin';
 
 export default defineComponent({
@@ -56,6 +56,7 @@ export default defineComponent({
      * @param {object} file
      */
     async upload(file: any) {
+      // 合并额外参数跟数据
       file = Object.assign(file, this.data);
       const formData: any = new FormData();
       // 将数据添加到表单当中
